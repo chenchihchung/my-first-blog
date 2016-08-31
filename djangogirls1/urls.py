@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.conf.urls import include
+
 from django.contrib import admin
+
+#這個 urls.py 定義了全名的 URL 對應，
+# 在上頭可以看到定義了 blog 前置名稱下，
+# 接下來的規則是包括在 blog.urls，也就是方才在 blog 目錄中定義的 urls.py 中。
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('blog.urls')),
+    #url(r'', include('blog.urls')),
+    url(r'^blog/', include('blog.urls')),
 ]
